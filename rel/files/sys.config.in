@@ -1,0 +1,30 @@
+[
+ %% SASL config
+ {sasl, [
+         {sasl_error_logger, {file, "log/sasl-error.log"}},
+         {errlog_type, error},
+         {error_logger_mf_dir, "log/sasl"},      % Log directory
+         {error_logger_mf_maxbytes, 10485760},   % 10 MB max file size
+         {error_logger_mf_maxfiles, 5}           % 5 files max
+        ]},
+ {log_server, [
+   {emqttd,'im_server@192.168.199.229'},
+   {db_type,    mysql}, % 数据库驱动，是选择mysql还是mongodb，或者以后还有更好的数据库接入    
+   {
+		mysql_pooloptions,[{size, 32}, {max_overflow, 64}]   % mysql 驱动的pools配置
+   },
+      {
+        mysql_options,
+        [{user, "root"}, {host,"127.0.0.1"},{password, "123456"}, {database, "log_db"},{keep_alive,600000},{batch_num,13}]
+   },
+   {
+        mongodb_repset,  { rs, <<"Repset">>, [ "192.168.199.69:27017" ] } % mongodb 集群的配置
+
+   }, 
+   {
+        mongodb_database, <<"rep_test">>        % 写入mongodb的数据库名称
+   }    
+
+ ]} 
+].
+

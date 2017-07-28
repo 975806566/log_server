@@ -1,0 +1,4 @@
+2017-07-28 21:03:11.159 [error] emulator Error in process <0.1213.0> on node 'log_server@127.0.0.1' with exit value:
+{undef,[{time,now,[],[]}]}
+2017-07-28 21:03:24.319 [error] <0.182.0>@mysql_msg_info_svc:handle_info:183 Insert msg error! M:error R:{badmatch,{error,{1616,<<"HY000">>,<<"DELAYED option not supported for table 'msg_info9'">>}}} 
+ detail:[{mysql_msg_info_svc,'-handle_info/2-fun-0-',4,[{file,"src/mysql_msg_info_svc.erl"},{line,171}]},{lists,foldl,3,[{file,"lists.erl"},{line,1263}]},{poolboy,transaction,3,[{file,"src/poolboy.erl"},{line,87}]},{mysql_msg_info_svc,handle_info,2,[{file,"src/mysql_msg_info_svc.erl"},{line,176}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,601}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,667}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,247}]}] 

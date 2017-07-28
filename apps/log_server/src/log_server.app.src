@@ -1,0 +1,12 @@
+{application, log_server,
+ [
+  {description, ""},
+  {vsn, "v1.0.0.0"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { log_server_app, []}},
+  {env, []}
+ ]}.
